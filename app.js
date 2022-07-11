@@ -47,6 +47,10 @@ let attnames;
 let attributeValues;
 let imageid;
 
+if (!fs.existsSync(folderPath)){
+    fs.mkdirSync(folderPath, { recursive: true });
+}
+
 function findFileByExt(folderPath, ext) 
 {
     var files = fs.readdirSync(folderPath);
